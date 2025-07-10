@@ -35,3 +35,12 @@ position = Vector2(112, 312)
 
 [node name="npc" parent="." instance=ExtResource("3_dxrkv")]
 position = Vector2(826, 310)
+
+[node name="npc2" parent="." instance=ExtResource("3_dxrkv")]
+position = Vector2(1090, 313)
+
+[node name="npc3" parent="." instance=ExtResource("3_dxrkv")]
+position = Vector2(1341, 312)
+
+[node name="npc4" parent="." instance=ExtResource("3_dxrkv")]
+position = Vector2(1580, 314)

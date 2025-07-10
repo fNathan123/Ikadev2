@@ -1,18 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://cj07vt82y2bne"]
+[gd_scene load_steps=4 format=3 uid="uid://cj07vt82y2bne"]
 
-[ext_resource type="PackedScene" uid="uid://dqml14qcqjv1n" path="res://game/package/node/package.tscn" id="1_5qr2g"]
+[ext_resource type="Script" uid="uid://rloru520i3rn" path="res://game/npc/NPC.gd" id="1_beknv"]
+[ext_resource type="Script" uid="uid://ba4rkfs82iy8t" path="res://game/npc/NPCView.gd" id="2_85gtb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_maasg"]
 size = Vector2(145, 141)
 
-[node name="npc" type="Node2D"]
-
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -31.0
-offset_top = -56.0
-offset_right = 29.0
-offset_bottom = 55.0
-color = Color(0.666667, 0.737255, 1, 1)
+[node name="npc" type="Node2D" node_paths=PackedStringArray("view")]
+script = ExtResource("1_beknv")
+view = NodePath("view")
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -20,11 +16,33 @@ color = Color(0.666667, 0.737255, 1, 1)
 position = Vector2(0, -13)
 shape = SubResource("RectangleShape2D_maasg")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="view" type="Node2D" parent="." node_paths=PackedStringArray("package_graphic")]
+script = ExtResource("2_85gtb")
+package_graphic = NodePath("Panel/PackageView")
+
+[node name="Panel" type="Panel" parent="view"]
 offset_left = 33.0
 offset_top = -130.0
 offset_right = 111.0
 offset_bottom = -60.0
 
-[node name="Package" parent="Panel" instance=ExtResource("1_5qr2g")]
+[node name="PackageView" type="ColorRect" parent="view/Panel"]
 layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="view"]
+offset_left = -31.0
+offset_top = -56.0
+offset_right = 29.0
+offset_bottom = 55.0
+color = Color(0.666667, 0.737255, 1, 1)
