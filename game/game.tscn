@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://dytcp063x8134"]
+
+[ext_resource type="Script" uid="uid://7ck0k1vvu21v" path="res://game/ui/timer/TimerView.gd" id="1_4fuuu"]
+[ext_resource type="Script" uid="uid://bpobawmf5vpfm" path="res://game/GameService.gd" id="1_dxrkv"]
+[ext_resource type="PackedScene" uid="uid://b7tkrov8dctbv" path="res://game/character/nodes/character.tscn" id="1_h7iqs"]
+[ext_resource type="PackedScene" uid="uid://bg8ii7p2vyxv6" path="res://game/truck/nodes/truck.tscn" id="2_4fuuu"]
+[ext_resource type="PackedScene" uid="uid://cj07vt82y2bne" path="res://game/npc/nodes/npc.tscn" id="3_dxrkv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_j67s0"]
+font_size = 45
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_dxrkv")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Timer" type="Label" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -120.0
+offset_top = 53.0
+offset_right = -69.0
+offset_bottom = 116.0
+grow_horizontal = 0
+text = "60"
+label_settings = SubResource("LabelSettings_j67s0")
+script = ExtResource("1_4fuuu")
+
+[node name="character" parent="." instance=ExtResource("1_h7iqs")]
+position = Vector2(321, 312)
+
+[node name="truck" parent="." instance=ExtResource("2_4fuuu")]
+position = Vector2(112, 312)
+
+[node name="npc" parent="." instance=ExtResource("3_dxrkv")]
+position = Vector2(826, 310)

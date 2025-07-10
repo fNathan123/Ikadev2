@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://cj07vt82y2bne"]
+
+[ext_resource type="PackedScene" uid="uid://dqml14qcqjv1n" path="res://game/package/node/package.tscn" id="1_5qr2g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_maasg"]
+size = Vector2(145, 141)
+
+[node name="npc" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -31.0
+offset_top = -56.0
+offset_right = 29.0
+offset_bottom = 55.0
+color = Color(0.666667, 0.737255, 1, 1)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -13)
+shape = SubResource("RectangleShape2D_maasg")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 33.0
+offset_top = -130.0
+offset_right = 111.0
+offset_bottom = -60.0
+
+[node name="Package" parent="Panel" instance=ExtResource("1_5qr2g")]
+layout_mode = 1
