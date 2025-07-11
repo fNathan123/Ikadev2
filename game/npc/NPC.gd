@@ -13,6 +13,7 @@ func _ready():
 	model = NPCModel.new();
 	await model.init_async();
 	view.set_package_type(model.package_id);
+	view.set_animation(model.id);
 
 func interact(_actor : Actor) -> bool:
 	if _actor.owned_package == model.package_id:

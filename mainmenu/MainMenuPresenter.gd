@@ -10,3 +10,6 @@ func start_game(_scene_tree : SceneTree) -> void :
 
 func exit_game(_scene_tree : SceneTree) -> void :
     model.exit_game(_scene_tree);
+
+func get_highscore() -> int :
+    return model.highscore;

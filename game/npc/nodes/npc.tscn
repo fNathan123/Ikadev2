@@ -1,10 +1,155 @@
-[gd_scene load_steps=4 format=3 uid="uid://cj07vt82y2bne"]
+[gd_scene load_steps=27 format=3 uid="uid://cj07vt82y2bne"]
 
 [ext_resource type="Script" uid="uid://rloru520i3rn" path="res://game/npc/NPC.gd" id="1_beknv"]
 [ext_resource type="Script" uid="uid://ba4rkfs82iy8t" path="res://game/npc/NPCView.gd" id="2_85gtb"]
+[ext_resource type="Texture2D" uid="uid://dlkrfl06gfv6s" path="res://assets/npc/npc1/Idle.png" id="3_85gtb"]
+[ext_resource type="FontFile" uid="uid://cxs45kl3al8fa" path="res://assets/font/pansyhand.ttf" id="3_mecpe"]
+[ext_resource type="Texture2D" uid="uid://ckt3mecekhys" path="res://assets/npc/npc2/Idle.png" id="4_xx6jn"]
+[ext_resource type="Texture2D" uid="uid://613pnb2cb04b" path="res://assets/npc/npc3/Idle.png" id="5_u1stm"]
+[ext_resource type="Texture2D" uid="uid://c8qk7ncxuta4o" path="res://assets/npc/npc4/Idle.png" id="6_5oov1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_maasg"]
 size = Vector2(145, 141)
+
+[sub_resource type="LabelSettings" id="LabelSettings_sxv3b"]
+font = ExtResource("3_mecpe")
+font_size = 30
+font_color = Color(0.0687983, 0.0687983, 0.0687983, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xx6jn"]
+atlas = ExtResource("3_85gtb")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1stm"]
+atlas = ExtResource("3_85gtb")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5oov1"]
+atlas = ExtResource("3_85gtb")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mecpe"]
+atlas = ExtResource("3_85gtb")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxv3b"]
+atlas = ExtResource("4_xx6jn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k18ll"]
+atlas = ExtResource("4_xx6jn")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_astg8"]
+atlas = ExtResource("4_xx6jn")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yx0oj"]
+atlas = ExtResource("4_xx6jn")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qa3ka"]
+atlas = ExtResource("5_u1stm")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dkxdn"]
+atlas = ExtResource("5_u1stm")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1l8g"]
+atlas = ExtResource("5_u1stm")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7uek"]
+atlas = ExtResource("5_u1stm")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ygke"]
+atlas = ExtResource("6_5oov1")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjpvl"]
+atlas = ExtResource("6_5oov1")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvn7j"]
+atlas = ExtResource("6_5oov1")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1sl2"]
+atlas = ExtResource("6_5oov1")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sxv3b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xx6jn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u1stm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5oov1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mecpe")
+}],
+"loop": true,
+"name": &"idle1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxv3b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k18ll")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_astg8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yx0oj")
+}],
+"loop": true,
+"name": &"idle2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qa3ka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dkxdn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u1l8g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v7uek")
+}],
+"loop": true,
+"name": &"idle3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ygke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjpvl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvn7j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1sl2")
+}],
+"loop": true,
+"name": &"idle4",
+"speed": 5.0
+}]
 
 [node name="npc" type="Node2D" node_paths=PackedStringArray("view")]
 script = ExtResource("1_beknv")
@@ -17,11 +162,12 @@ position = Vector2(-1, 0)
 position = Vector2(0, -13)
 shape = SubResource("RectangleShape2D_maasg")
 
-[node name="view" type="Node2D" parent="." node_paths=PackedStringArray("package_graphic", "package_baloon", "interact_baloon")]
+[node name="view" type="Node2D" parent="." node_paths=PackedStringArray("package_graphic", "package_baloon", "interact_baloon", "animated_sprite")]
 script = ExtResource("2_85gtb")
 package_graphic = NodePath("Panel/PackageView")
 package_baloon = NodePath("Panel")
 interact_baloon = NodePath("Label")
+animated_sprite = NodePath("AnimatedSprite2D")
 
 [node name="Panel" type="Panel" parent="view"]
 offset_left = 33.0
@@ -43,13 +189,6 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="view"]
-offset_left = -31.0
-offset_top = -56.0
-offset_right = 29.0
-offset_bottom = 55.0
-color = Color(0.666667, 0.737255, 1, 1)
-
 [node name="Label" type="Label" parent="view"]
 visible = false
 offset_left = -78.0
@@ -57,3 +196,12 @@ offset_top = -83.0
 offset_right = 31.0
 offset_bottom = -60.0
 text = "press <space>"
+label_settings = SubResource("LabelSettings_sxv3b")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="view"]
+position = Vector2(-2.50001, -11.5)
+scale = Vector2(3.14583, 3.10417)
+sprite_frames = SubResource("SpriteFrames_sxv3b")
+animation = &"idle1"
+frame_progress = 0.761413
+flip_h = true

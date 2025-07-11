@@ -43,6 +43,7 @@ func game_end() -> void:
 	var score = (int)((timer.time_left * 100) + (data.submitted_package * 1000));
 	data.player_score.set_value(score);
 	is_game_ended = true;
+	data.save_high_score(score);
 	game_over.emit();
 
 func close_game():

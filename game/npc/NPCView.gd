@@ -5,6 +5,7 @@ extends Node2D
 @export var package_graphic : ColorRect;
 @export var package_baloon : Node;
 @export var interact_baloon : Node;
+@export var animated_sprite : AnimatedSprite2D;
 
 const color1 = Color.TEAL;
 const color2 = Color.AQUA;
@@ -30,3 +31,6 @@ func hide_interact_baloon():
 
 func hide_package():
 	package_baloon.visible = false;
+
+func set_animation(id : int) -> void:
+	animated_sprite.play("idle"+str(id+1));

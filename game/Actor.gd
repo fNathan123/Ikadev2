@@ -1,6 +1,6 @@
 class_name Actor
 
-extends Node2D
+extends CharacterBody2D
 
 var owned_package : int = -1:
     get:return owned_package;

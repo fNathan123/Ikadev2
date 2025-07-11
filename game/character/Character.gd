@@ -18,7 +18,10 @@ func _ready():
 
 func _process(delta):
 	if model:
-		if !model.controllable : return;
+		if !model.controllable : 
+			velocity=Vector2.ZERO;
+			view.play_idle();
+			return;
 
 		var direction = Vector2.ZERO;
 		if Input.is_action_pressed("move_right"):
@@ -27,8 +30,15 @@ func _process(delta):
 			direction.x = -1;
 		if Input.is_action_just_pressed("interact"):
 			interact();
+		
+		if direction.length() > 0 :
+			view.play_walk(direction);
+		else :
+			view.play_idle();
+		velocity = direction * model.speed;
 
-		position += direction * model.speed * delta;
+func _physics_process(delta: float) -> void:
+	move_and_slide();
 
 func on_area_entered(area : Area2D) -> void:
 	if area.get_parent() is Interactable:
@@ -45,7 +55,8 @@ func on_area_exited(area : Area2D) -> void:
 
 func interact()-> void:
 	if current_interactable:
-		current_interactable.interact(self);
+		if current_interactable.interact(self):
+			view.play_drop_package();
 
 func set_owned_package(_package : int) -> void:
 	owned_package = _package;
