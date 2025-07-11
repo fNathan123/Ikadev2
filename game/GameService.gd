@@ -8,11 +8,11 @@ var timer : Timer;
 var is_game_ended : bool = false;
 
 func _init() -> void:
+	is_ready = false;
 	if !instance:
 		instance = self;
 
 func _ready():
-	instance = self;
 	data = GameData.new();
 	data.init_data();
 	is_ready = true;

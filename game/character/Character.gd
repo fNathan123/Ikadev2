@@ -53,7 +53,3 @@ func set_owned_package(_package : int) -> void:
 		view.set_package(_package);
 	else :
 		view.hide_package();
-
-func free() -> void:
-	model.free();
-	super();

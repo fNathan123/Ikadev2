@@ -1,4 +1,5 @@
 class_name TruckModel
+extends RefCounted;
 
 var package_id : Array[int] :
 	get: return package_id;

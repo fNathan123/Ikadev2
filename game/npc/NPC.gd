@@ -27,7 +27,3 @@ func show_notification() -> void:
 
 func hide_notification() -> void:
 	view.hide_interact_baloon();
-
-func free() -> void:
-	model.free();
-	super();

@@ -1,4 +1,5 @@
 class_name  ObservableValue
+extends RefCounted
 
 signal value_changed
 

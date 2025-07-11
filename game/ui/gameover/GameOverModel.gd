@@ -1,4 +1,5 @@
 class_name GameOverModel
+extends RefCounted
 
 signal game_over;
 

@@ -1,4 +1,5 @@
 class_name NPCModel
+extends RefCounted
 
 var id : int :
 	get: return id;

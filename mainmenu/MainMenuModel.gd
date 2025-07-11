@@ -1,4 +1,5 @@
 class_name MainMenuModel
+extends RefCounted
 
 func load_game(_scene_tree : SceneTree) -> void :
     var scene : PackedScene = load("res://game/game.tscn");

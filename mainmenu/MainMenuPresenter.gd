@@ -1,4 +1,5 @@
 class_name MainMenuPresenter
+extends RefCounted
 
 var model : MainMenuModel;
 func _init() -> void:

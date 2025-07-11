@@ -1,4 +1,5 @@
 class_name GameOverPresenter
+extends RefCounted
 
 var view : GameOverView;
 var model : GameOverModel :

@@ -1,4 +1,5 @@
 class_name CharacterModel
+extends RefCounted
 
 var speed : int = 0 :
 	get:return speed
