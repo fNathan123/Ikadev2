@@ -6,7 +6,7 @@ var package_id : Array[int] :
 func init_async() :
 	if(!GameService.is_ready):
 		await GameService.instance.wait_service();
-	package_id = GameService.instance.data.package_pool;
+	package_id = GameService.instance.data.package_pool.duplicate();
 	package_id.shuffle();
 
 var last_package_idx = 0;

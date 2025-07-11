@@ -7,6 +7,8 @@ var current_interactable : Interactable;
 var model: CharacterModel:
 	get:return model;
 
+@export var view : CharacterView;
+
 func _ready():
 	model = CharacterModel.new();
 	await model.init_async();
@@ -19,9 +21,9 @@ func _process(delta):
 		var direction = Vector2.ZERO;
 		if Input.is_action_pressed("move_right"):
 			direction.x = 1;
-		if Input.is_action_pressed("move_left"):
+		elif Input.is_action_pressed("move_left"):
 			direction.x = -1;
-		if Input.is_action_pressed("interact"):
+		if Input.is_action_just_pressed("interact"):
 			interact();
 
 		position += direction * model.speed * delta;
@@ -42,6 +44,13 @@ func on_area_exited(area : Area2D) -> void:
 func interact()-> void:
 	if current_interactable:
 		current_interactable.interact(self);
+
+func set_owned_package(_package : int) -> void:
+	owned_package = _package;
+	if _package >=0 :
+		view.set_package(_package);
+	else :
+		view.hide_package();
 
 func free() -> void:
 	model.free();

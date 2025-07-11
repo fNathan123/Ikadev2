@@ -1,8 +1,8 @@
 class_name  Interactable
 extends Node
 
-func interact(_actor : Actor) -> void:
-    pass;
+func interact(_actor : Actor) -> bool:
+    return false;
 
 func show_notification() -> void:
     pass;

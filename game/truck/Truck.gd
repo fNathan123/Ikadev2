@@ -11,8 +11,11 @@ func _ready():
     model = TruckModel.new();
     await model.init_async();
 
-func interact(_actor : Actor) -> void:
+func interact(_actor : Actor) -> bool:
+    if _actor.owned_package >= 0:
+        return false;
     _actor.set_owned_package(model.get_package());
+    return true;
 
 func show_notification() -> void:
     view.show_baloon();
