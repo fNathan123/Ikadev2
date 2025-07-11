@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b7tkrov8dctbv"]
+[gd_scene load_steps=21 format=3 uid="uid://b7tkrov8dctbv"]
 
 [ext_resource type="Script" uid="uid://bl66fhhmh1pyu" path="res://game/character/Character.gd" id="1_011pc"]
 [ext_resource type="Script" uid="uid://dsjh7th2ne1oy" path="res://game/character/CharacterView.gd" id="2_i1eyi"]
@@ -96,6 +96,14 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_011pc"]
 size = Vector2(78, 86)
 
+[sub_resource type="Curve" id="Curve_dym7k"]
+_limits = [-500.0, 500.0, 0.0, 1.0]
+_data = [Vector2(0, -320.225), 0.0, 0.0, 0, 0, Vector2(1, 500), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_qiv23"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.352941)
+
 [node name="character" type="CharacterBody2D" node_paths=PackedStringArray("view")]
 script = ExtResource("1_011pc")
 view = NodePath("View")
@@ -103,12 +111,13 @@ view = NodePath("View")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_pvo2s")
 
-[node name="View" type="Node2D" parent="." node_paths=PackedStringArray("package_baloon", "package_graphic", "animated_sprite", "pickup_sfx")]
+[node name="View" type="Node2D" parent="." node_paths=PackedStringArray("package_baloon", "package_graphic", "animated_sprite", "pickup_sfx", "vfx")]
 script = ExtResource("2_i1eyi")
 package_baloon = NodePath("PackageBaloon")
 package_graphic = NodePath("PackageBaloon/Package")
 animated_sprite = NodePath("AnimatedSprite2D")
 pickup_sfx = NodePath("pickupSfx")
+vfx = NodePath("../CPUParticles2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="View"]
 position = Vector2(13, -21)
@@ -116,7 +125,7 @@ scale = Vector2(2.71875, 2.71875)
 sprite_frames = SubResource("SpriteFrames_p0oqe")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.53983
+frame_progress = 0.926027
 
 [node name="PackageBaloon" type="Panel" parent="View"]
 visible = false
@@ -151,3 +160,21 @@ shape = SubResource("RectangleShape2D_011pc")
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(0, -120)
 zoom = Vector2(1.5, 1.5)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 20
+lifetime = 1.5
+emission_shape = 3
+emission_rect_extents = Vector2(0, 30)
+direction = Vector2(-1, 0)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 141.41
+orbit_velocity_curve = SubResource("Curve_dym7k")
+linear_accel_min = 4.04
+linear_accel_max = 10.1
+scale_amount_min = 3.0
+scale_amount_max = 7.0
+color_initial_ramp = SubResource("Gradient_qiv23")

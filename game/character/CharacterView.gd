@@ -6,6 +6,7 @@ extends Node
 @export var package_graphic : ColorRect;
 @export var animated_sprite : AnimatedSprite2D;
 @export var pickup_sfx : AudioStreamPlayer2D;
+@export var vfx : CPUParticles2D;
 
 const color1 = Color.TEAL;
 const color2 = Color.AQUA;
@@ -30,15 +31,19 @@ func hide_package() -> void:
 func play_walk(dir : Vector2) -> void:
 	if dir == Vector2.LEFT:
 		animated_sprite.flip_h = true;
+		vfx.direction = Vector2.RIGHT;
 	else :
 		animated_sprite.flip_h = false;
+		vfx.direction = Vector2.LEFT;
 
 	if animated_sprite.animation == "walk": return;
 	
 	animated_sprite.play("walk");
+	vfx.emitting = true;
 
 func play_idle() -> void:
 	if animated_sprite.animation == "idle" : return;
 	animated_sprite.play("idle");
+	vfx.emitting = false;
 
 func play_drop_package() -> void: pickup_sfx.play();
