@@ -2,7 +2,7 @@ class_name  TruckView
 
 extends Node2D
 
-@export var label : Label;
+@export var label : Node;
 
 func show_baloon() -> void:
     label.visible = true;

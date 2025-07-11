@@ -3,6 +3,8 @@ class_name NPCView
 extends Node2D
 
 @export var package_graphic : ColorRect;
+@export var package_baloon : Node;
+@export var interact_baloon : Node;
 
 const color1 = Color.TEAL;
 const color2 = Color.AQUA;
@@ -19,3 +21,12 @@ func set_package_type(_type : int) -> void:
 			package_graphic.color = color3;
 		3:
 			package_graphic.color = color4;
+
+func show_interact_baloon():
+	interact_baloon.visible = true;
+
+func hide_interact_baloon():
+	interact_baloon.visible = false;
+
+func hide_package():
+	package_baloon.visible = false;
