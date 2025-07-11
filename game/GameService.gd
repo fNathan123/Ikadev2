@@ -37,6 +37,7 @@ func _process(delta):
 	data.initial_timer.set_value(timer.time_left);
 
 func on_timeout() -> void:
+	timer.stop();
 	game_end();
 
 func game_end() -> void:
