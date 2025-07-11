@@ -12,6 +12,7 @@ func _ready():
 	await model.init_async();
 	var interaction_area : Area2D = get_node("Area2D");
 	interaction_area.area_entered.connect(on_area_entered);
+	interaction_area.area_exited.connect(on_area_exited);
 
 func _process(delta):
 	if model:
@@ -30,6 +31,13 @@ func on_area_entered(area : Area2D) -> void:
 		var interactable : Interactable = area.get_parent();
 		interactable.show_notification();
 		current_interactable = interactable;
+
+func on_area_exited(area : Area2D) -> void:
+	if area.get_parent() is Interactable:
+		var interactable : Interactable = area.get_parent();
+		interactable.hide_notification();
+		if current_interactable == interactable:
+			current_interactable = null;
 
 func interact()-> void:
 	if current_interactable:

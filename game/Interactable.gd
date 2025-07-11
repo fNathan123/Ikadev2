@@ -6,3 +6,6 @@ func interact(_actor : Actor) -> void:
 
 func show_notification() -> void:
     pass;
+
+func hide_notification() -> void:
+    pass;
