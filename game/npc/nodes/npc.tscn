@@ -203,5 +203,5 @@ position = Vector2(-2.50001, -11.5)
 scale = Vector2(3.14583, 3.10417)
 sprite_frames = SubResource("SpriteFrames_sxv3b")
 animation = &"idle1"
-frame_progress = 0.131365
+frame_progress = 0.393219
 flip_h = true

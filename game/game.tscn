@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dytcp063x8134"]
+[gd_scene load_steps=18 format=3 uid="uid://dytcp063x8134"]
 
 [ext_resource type="Script" uid="uid://7ck0k1vvu21v" path="res://game/ui/timer/TimerView.gd" id="1_4fuuu"]
 [ext_resource type="Script" uid="uid://bpobawmf5vpfm" path="res://game/GameService.gd" id="1_dxrkv"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cq7ituo8wi754" path="res://assets/bg/Hills Layer 02.png" id="8_l8g03"]
 [ext_resource type="Texture2D" uid="uid://bwvjsfb0f3p78" path="res://assets/bg/Hills Layer 03.png" id="9_l8g03"]
 [ext_resource type="Texture2D" uid="uid://bkko26285iisq" path="res://assets/bg/Hills Layer 04.png" id="10_j8tme"]
+[ext_resource type="Script" uid="uid://dsv2d1ccg7h5n" path="res://game/ui/pause/PauseView.gd" id="10_vsp63"]
 [ext_resource type="Texture2D" uid="uid://nh78lfgjwqry" path="res://assets/bg/Hills Layer 05.png" id="11_qf6n1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_j67s0"]
@@ -186,6 +187,60 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/GameOver/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Main Menu"
+label_settings = SubResource("LabelSettings_dakft")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Pause" type="Panel" parent="CanvasLayer" node_paths=PackedStringArray("main_menu_button")]
+process_mode = 3
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("10_vsp63")
+main_menu_button = NodePath("Button")
+
+[node name="Label" type="Label" parent="CanvasLayer/Pause"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -106.0
+offset_right = 97.0
+offset_bottom = -57.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Pause"
+label_settings = SubResource("LabelSettings_dxrkv")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/Pause"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = -36.0
+offset_right = 68.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Pause/Button"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
