@@ -18,6 +18,8 @@ func _ready():
 
 func _process(delta):
 	if model:
+		if !model.controllable : return;
+
 		var direction = Vector2.ZERO;
 		if Input.is_action_pressed("move_right"):
 			direction.x = 1;

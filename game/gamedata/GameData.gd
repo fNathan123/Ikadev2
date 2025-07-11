@@ -7,6 +7,7 @@ var player_score : IntegerValue;
 var character_speed : int;
 var package_pool : Array[int];
 var npc_ids : Array[int];
+var submitted_package : int = 0;
 
 func init_data() -> void:
     initial_timer = IntegerValue.new().init(60);

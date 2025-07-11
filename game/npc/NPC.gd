@@ -15,7 +15,6 @@ func _ready():
 	view.set_package_type(model.package_id);
 
 func interact(_actor : Actor) -> bool:
-	print("try to submit", _actor.owned_package, model.package_id);
 	if _actor.owned_package == model.package_id:
 		view.hide_package();
 		package_submitted.emit();
@@ -28,3 +27,7 @@ func show_notification() -> void:
 
 func hide_notification() -> void:
 	view.hide_interact_baloon();
+
+func free() -> void:
+	model.free();
+	super();
