@@ -125,7 +125,7 @@ scale = Vector2(2.71875, 2.71875)
 sprite_frames = SubResource("SpriteFrames_p0oqe")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.926027
+frame_progress = 0.22401
 
 [node name="PackageBaloon" type="Panel" parent="View"]
 visible = false
