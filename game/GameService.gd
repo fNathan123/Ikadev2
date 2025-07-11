@@ -8,7 +8,8 @@ var timer : Timer;
 var is_game_ended : bool = false;
 
 func _init() -> void:
-	instance = self;
+	if !instance:
+		instance = self;
 
 func _ready():
 	instance = self;
@@ -43,6 +44,10 @@ func game_end() -> void:
 	data.player_score.set_value(score);
 	is_game_ended = true;
 	game_over.emit();
+
+func close_game():
+	var scene : PackedScene = load("res://mainmenu/nodes/main_menu.tscn");
+	get_tree().change_scene_to_packed(scene);
 
 func wait_service():
 	if is_ready : pass;

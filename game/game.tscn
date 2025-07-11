@@ -34,7 +34,7 @@ text = "60"
 label_settings = SubResource("LabelSettings_j67s0")
 script = ExtResource("1_4fuuu")
 
-[node name="GameOver" type="Panel" parent="CanvasLayer" node_paths=PackedStringArray("score_text")]
+[node name="GameOver" type="Panel" parent="CanvasLayer" node_paths=PackedStringArray("score_text", "main_menu_button")]
 visible = false
 anchors_preset = 15
 anchor_right = 1.0
@@ -43,6 +43,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("3_dakft")
 score_text = NodePath("Label3")
+main_menu_button = NodePath("Button")
 
 [node name="Label" type="Label" parent="CanvasLayer/GameOver"]
 layout_mode = 1

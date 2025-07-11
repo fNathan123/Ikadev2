@@ -17,3 +17,6 @@ func get_score() -> String:
 func on_game_over() -> void:
     view.visible = true;
     view.refresh();
+
+func close_game() -> void:
+    model.close_game();

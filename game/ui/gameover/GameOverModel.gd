@@ -10,5 +10,8 @@ func init_async():
         await GameService.instance.wait_service();
     GameService.instance.game_over.connect(on_game_over);
 
-func on_game_over():
+func on_game_over() -> void:
     game_over.emit();
+
+func close_game() -> void:
+    GameService.instance.close_game();
